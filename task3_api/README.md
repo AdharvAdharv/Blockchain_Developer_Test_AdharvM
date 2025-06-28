@@ -51,12 +51,7 @@ POST /campaigns
 ## GET /campaigns
 ➝ Retrieve all available campaigns.
 
-## ✅ Test Cases Covered
-Test Case	Description	Expected Result
-POST /campaigns success	Submit valid title & description	Campaign created & returned
-POST /campaigns error	Submit request missing title or description	400 error with validation message
-GET /campaigns success	Retrieve campaigns when database has campaigns	Array of campaigns returned
-GET /campaigns empty	Retrieve when no campaigns exist in the database	Empty array returned
+
 
 
 ## 📦 Docker Usage

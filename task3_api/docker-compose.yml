@@ -1,0 +1,24 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    container_name: crowdfunding_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build: .
+    container_name: crowdfunding_api
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/crowdfunding
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+
+volumes:
+  mongo_data:
